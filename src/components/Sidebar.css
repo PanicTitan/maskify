@@ -1,0 +1,274 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    width: 300px;
+    height: 100%;
+    /* padding: 68px 15px 15px 15px; */
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #343a40;
+    font-size: 14px;
+    margin-left: 0px;
+    transition: margin-left 1s;
+    position: relative;
+    overflow: visible; /* was causing button disapear when only in .sidebar.sidebar-hidden */
+}
+.sidebar.sidebar-hidden {
+    margin-left: -300px;
+    /* overflow: visible; */
+}
+.sidebar.sidebar-disabled {
+    pointer-events: none;
+    opacity: 0.8;
+} /* Style for disabling sidebar */
+.sidebar-height-wrapper {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 68px 15px 15px 15px;
+}
+.sidebar-section {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+}
+.sidebar-section:last-child {
+    border-bottom: none;
+}
+.sidebar h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 1.1em;
+}
+.sidebar .close-button {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    transition: right 1s;
+    z-index: 1;
+}
+.sidebar.sidebar-hidden .close-button {
+    right: -50px;
+}
+.sidebar button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    width: auto;
+    height: auto;
+}
+.sidebar button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+.sidebar button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.status-section {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+}
+.ai-status {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.95em;
+    min-height: 1.2em;
+    margin-bottom: 5px;
+}
+.readiness-status {
+    font-size: 0.85em;
+    color: #495057;
+    margin-top: 5px;
+}
+.warning-text {
+    font-size: 0.85em;
+    color: #dc3545;
+    margin-left: 5px;
+}
+.list-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 40px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f3f5;
+    gap: 10px;
+    cursor: grab;
+    transition: background-color 0.1s ease-out;
+}
+.list-item:last-child {
+    border-bottom: none;
+}
+.point-item span {
+    flex-grow: 1;
+    font-size: 0.9em;
+}
+.image-item {
+    gap: 10px;
+    cursor: pointer;
+}
+.thumbnail-container {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+}
+.thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.base-image-thumb {
+    width: auto;
+    height: 150px;
+    margin-top: 10px;
+    border: 1px solid #adb5bd;
+}
+.base-image-thumb img {
+    object-fit: contain;
+}
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+}
+.item-details span {
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.item-actions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.item-actions button {
+    padding: 4px 8px;
+    font-size: 0.8em;
+}
+.remove-button {
+    background-color: transparent;
+    color: #dc3545;
+    border: none;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: auto;
+    transition: color 0.2s ease;
+}
+.item-actions .remove-button {
+    margin-left: 0;
+}
+.remove-button:hover {
+    color: #a71d2a;
+    background-color: transparent;
+}
+.normal-button:hover {
+    color: white;
+    background-color: transparent;
+}
+.controls-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.controls-section h4 {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.controls-section .clip-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    background-color: #6c757d;
+}
+.controls-section .clip-button:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+.controls-section .clip-button.active {
+    background-color: #17a2b8;
+}
+.controls-section .clip-button.active:hover:not(:disabled) {
+    background-color: #138496;
+}
+.controls-section .clip-button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Save button specific style */
+.save-button {
+    background-color: #28a745; /* Green */
+}
+.save-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Style for indicating drop target */
+.list-item.drag-over-visual {
+    border-top: 2px dashed #007bff;
+    background-color: #e9f5ff;
+}
+
+/* Style for selected image list item */
+.list-item.selected {
+    background-color: #cfe2ff;
+    border-left: 4px solid #0d6efd;
+    padding-left: 6px;
+}
+
+/* Style for the "Processing..." text during BG removal */
+.item-actions .processing-text {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #6c757d;
+    padding: 4px 8px;
+}
+
+.change-color {
+    background-color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: none;
+    height: 22px;
+}

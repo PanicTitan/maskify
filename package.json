@@ -1,0 +1,41 @@
+{
+    "name": "maskify",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "tsc -b && vite build",
+        "build-silent": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "firebase:login": "firebase login",
+        "firebase:logout": "firebase logout",
+        "firebase:init": "firebase init",
+        "firebase:deploy": "firebase deploy"
+    },
+    "dependencies": {
+        "@huggingface/transformers": "^3.5.0",
+        "konva": "^9.3.20",
+        "platform": "^1.3.6",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-konva": "^19.0.3"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "@types/platform": "^1.3.6",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-basic-ssl": "^2.0.0",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.22.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.19",
+        "firebase-tools": "^14.2.1",
+        "globals": "^16.0.0",
+        "typescript": "~5.7.2",
+        "typescript-eslint": "^8.26.1",
+        "vite": "^6.3.1"
+    }
+}
